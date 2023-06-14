@@ -1,0 +1,54 @@
+<!DOCTYPE HTML> 
+
+<html> 
+<head>
+    <link rel="stylesheet" href="button.css">    
+</head>
+<body>
+   
+
+        <h1 style="text-align:center">Increment and Decrement counter</h1>
+  
+        <div class="container">           
+            <button onclick="increment()" id="inc">Increment+</button>
+            <h2 id="counting" onclick="buttonTabel()"></h2>
+            <button onclick="decrement()" id="dec">Decrement-</button> 
+    
+        </div>
+        <div id="demo" style="text-align:center" class="tabel"></div>     
+</body>
+<script>
+ let number = 0;
+ document.getElementById("counting").innerHTML = number;
+ function increment(){
+    buttonTabel(number+1);
+    number+=1;
+    document.getElementById("counting").innerHTML=number;
+ }
+ function decrement(){
+    if(number> 0){
+        buttonTabel(number-1);
+        number-=1;
+           document.getElementById("counting").innerHTML=number;
+    }
+    else if(number==0){
+        document.getElementById("demo").innerHTML="";
+        alert("Negative value not show");
+        
+    }
+    else{
+        document.getElementById("counting").innerHTML="";
+        
+    }
+ }
+ 
+ function buttonTabel(number){
+    let tabel = "";
+    for(i=1 ; i<=10; i++){
+tabel +=  "<ul>" + number*i + "</ul>";
+    }
+    document.getElementById("demo").innerHTML=tabel;
+ }
+ </script>
+  
+</html>
